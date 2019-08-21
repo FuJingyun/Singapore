@@ -1,0 +1,14 @@
+{
+    "dataset_prefix": "foodNonfood-res50",
+    "data_folder_dir": "/media/Share/jingyun/data/train0802",
+    "testdata_folder_dir": "",
+    "model_name": "resnet50",
+    "start_lr": 0.001,
+    "patience_epoch": 1,
+    "train_batchsz": 8,
+    "val_batchsz": 4,
+    "logging_model_params": false,
+    "snapshot_every_n_epoch": 2,
+    "which_gpu": 1,
+    "resume_checkpoint": "/media/Share/jingyun/Pytorch-training/files/snapshot/BestWeight-foodNonfood-res50-02-08-2019_15-47-04.pth"
+}
