@@ -1,4 +1,4 @@
-# Training multi-class classifier (Non-Docker)
+# Training multi-class classifier 
 
 ## Overview
 Steps to take
