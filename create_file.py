@@ -5,7 +5,7 @@ Author ： Fu Jingyun
 import  xlrd
 import os
  
-workbook = xlrd.open_workbook(r'C:/Users/NExT/Desktop/1.xlsx')
+workbook = xlrd.open_workbook(r'C:/Users/NExT/Desktop/Cat.xlsx')
 print(workbook.sheet_names())            #查看所有sheet名称
 sheet1 = workbook.sheet_by_index(0)      #用索引取第1个sheet
  
@@ -13,11 +13,13 @@ sheet1 = workbook.sheet_by_index(0)      #用索引取第1个sheet
 #row0 = sheet1.row_values(0)         #读取第1行数据
 nrows = sheet1.nrows                #读取行数
 
+newpath='C:/Users/NExT/Desktop/VAL'
 
-os.mkdir('C:/Users/NExT/Desktop/New_BF&S')
-base = 'C:/Users/NExT/Desktop/New_BF&S/'
+if not os.path.exists(newpath):
+    os.mkdir(newpath)
+
 
 for i in range(nrows):         #循环逐行打印
     cell = sheet1.cell_value(i,0)
-    file_name = base + cell
+    file_name = newpath +'/'+ cell
     os.mkdir(file_name)
