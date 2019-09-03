@@ -47,8 +47,8 @@ def IsValidImage(img_path):
 
 
 #给定操作目录
-path='C:/Users/NExT/Desktop/test_programme'
-newpath = 'C:/Users/NExT/Desktop/haha'
+path='C:/Users/NExT/Desktop/New_BF_test'
+newpath = 'C:/Users/NExT/Desktop/New_BF_test_ok'
 problempath= 'C:/Users/NExT/Desktop/problem'
 
 
@@ -87,7 +87,7 @@ for file in dir:
      filelist = list_all_files(subfile)
      namenum = 1
      for k in range(0,len(filelist)):
-         temppath=path+'/'+file+'/'+ str(k)+'.jpg'
+         temppath=path+'/'+file+'/'+ str(k)+'.jpeg'
          if  os.path.exists(temppath):
              if os.path.isfile(temppath):
                  if IsValidImage(temppath):
@@ -118,7 +118,99 @@ for file in dir:
                              namenum+=1
         #                   shutil.copy(temppath, dst)
                              i.save(dst)
-                            
+         elif os.path.exists(path+'/'+file+'/'+ str(k)+'.jpg'):
+             temppath=path+'/'+file+'/'+ str(k)+'.jpg'
+             if os.path.isfile(temppath):
+                 if IsValidImage(temppath):
+                     try:
+                         piexif.remove(temppath)
+                         i = Image.open(temppath)
+                         i=i.convert("RGB")
+                         if temppath[-4]=='.':   
+                             dst=newsubpath+'/'+str(k)+temppath[-4:]
+#                             namenum+=1
+        #                   shutil.copy(temppath, dst)
+                             i.save(dst)
+                         elif temppath[-5]=='.':
+                             dst=newsubpath+'/'+str(k)+temppath[-5:]
+#                             namenum+=1
+        #                   shutil.copy(temppath, dst)
+                             i.save(dst)
+                     except:
+                         i = Image.open(temppath)
+                         i=i.convert("RGB")
+                         if temppath[-4]=='.':   
+                             dst=problempath+'/'+str(namenum)+temppath[-4:]
+                             namenum+=1
+        #                   shutil.copy(temppath, dst)
+                             i.save(dst)
+                         elif temppath[-5]=='.':
+                             dst=problempath+'/'+str(namenum)+temppath[-5:]
+                             namenum+=1
+        #                   shutil.copy(temppath, dst)
+                             i.save(dst)
+         elif os.path.exists(path+'/'+file+'/'+ str(k)+'.JPEG'):
+             temppath=path+'/'+file+'/'+ str(k)+'.JPEG'
+             if os.path.isfile(temppath):
+                 if IsValidImage(temppath):
+                     try:
+                         piexif.remove(temppath)
+                         i = Image.open(temppath)
+                         i=i.convert("RGB")
+                         if temppath[-4]=='.':   
+                             dst=newsubpath+'/'+str(k)+temppath[-4:]
+#                             namenum+=1
+        #                   shutil.copy(temppath, dst)
+                             i.save(dst)
+                         elif temppath[-5]=='.':
+                             dst=newsubpath+'/'+str(k)+temppath[-5:]
+#                             namenum+=1
+        #                   shutil.copy(temppath, dst)
+                             i.save(dst)
+                     except:
+                         i = Image.open(temppath)
+                         i=i.convert("RGB")
+                         if temppath[-4]=='.':   
+                             dst=problempath+'/'+str(namenum)+temppath[-4:]
+                             namenum+=1
+        #                   shutil.copy(temppath, dst)
+                             i.save(dst)
+                         elif temppath[-5]=='.':
+                             dst=problempath+'/'+str(namenum)+temppath[-5:]
+                             namenum+=1
+        #                   shutil.copy(temppath, dst)
+                             i.save(dst)
+         elif os.path.exists(path+'/'+file+'/'+ str(k)+'.JPG'):
+             temppath=path+'/'+file+'/'+ str(k)+'.JPG'
+             if os.path.isfile(temppath):
+                 if IsValidImage(temppath):
+                     try:
+                         piexif.remove(temppath)
+                         i = Image.open(temppath)
+                         i=i.convert("RGB")
+                         if temppath[-4]=='.':   
+                             dst=newsubpath+'/'+str(k)+temppath[-4:]
+#                             namenum+=1
+        #                   shutil.copy(temppath, dst)
+                             i.save(dst)
+                         elif temppath[-5]=='.':
+                             dst=newsubpath+'/'+str(k)+temppath[-5:]
+#                             namenum+=1
+        #                   shutil.copy(temppath, dst)
+                             i.save(dst)
+                     except:
+                         i = Image.open(temppath)
+                         i=i.convert("RGB")
+                         if temppath[-4]=='.':   
+                             dst=problempath+'/'+str(namenum)+temppath[-4:]
+                             namenum+=1
+        #                   shutil.copy(temppath, dst)
+                             i.save(dst)
+                         elif temppath[-5]=='.':
+                             dst=problempath+'/'+str(namenum)+temppath[-5:]
+                             namenum+=1
+        #                   shutil.copy(temppath, dst)
+                             i.save(dst)                   
      
                  
                 
