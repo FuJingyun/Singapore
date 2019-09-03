@@ -31,8 +31,8 @@ def list_all_files(rootdir):
 
 
 #给定操作目录
-path='C:/Users/NExT/Desktop/1'
-newpath = 'C:/Users/NExT/Desktop/1_test'
+path='C:/Users/NExT/Desktop/New_BF&S'
+newpath = 'C:/Users/NExT/Desktop/New_BF&S_test'
 
 
 #建立新文件夹
@@ -89,38 +89,29 @@ for file in dir:
 #     print(rest)
      for j in range(0,picknum):
          temppath=filelist[j]
-         if os.path.isfile(temppath):
-              shutil.move(temppath,newsubpath+'/'+str(number)+temppath[-4:])
-              number=number+1
-         else:
-              while not os.path.isfile(temppath):
-                  onenewnum=random.choice(rest)
-                  rest.remove(onenewnum)
-                  temppath=filelist[onenewnum]
-              shutil.move(temppath,newsubpath+'/'+str(number)+temppath[-3:])
-              number=number+1 
+         if temppath[-4]=='.':
+             if os.path.isfile(temppath):
+                  shutil.move(temppath,newsubpath+'/'+str(number)+temppath[-4:])
+                  number=number+1
+             else:
+                  while not os.path.isfile(temppath):
+                      onenewnum=random.choice(rest)
+                      rest.remove(onenewnum)
+                      temppath=filelist[onenewnum]
+                  shutil.move(temppath,newsubpath+'/'+str(number)+temppath[-4:])
+                  number=number+1 
+         elif temppath[-5]=='.':
+             if os.path.isfile(temppath):
+                  shutil.move(temppath,newsubpath+'/'+str(number)+temppath[-5:])
+                  number=number+1
+             else:
+                  while not os.path.isfile(temppath):
+                      onenewnum=random.choice(rest)
+                      rest.remove(onenewnum)
+                      temppath=filelist[onenewnum]
+                  shutil.move(temppath,newsubpath+'/'+str(number)+temppath[-5:])
+                  number=number+1 
              
          
 
          
-         
-         
-
-        
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-          
-         
-     
-
