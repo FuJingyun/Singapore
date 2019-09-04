@@ -235,6 +235,7 @@ ws.cell(row=1,column=1,value="food_label")
 ws.cell(row=1,column=2,value="foodaccuracy_top1")
 ws.cell(row=1,column=3,value="foodaccuracy_top5")
 ws.cell(row=1,column=4,value="foodaccuracy_top25")
+ws.cell(row=1,column=5,value="Pic_NUM")
 resStartRow = 1
 for p in range(0,num_class):
     resStartRow += 1
@@ -242,6 +243,7 @@ for p in range(0,num_class):
     ws.cell(row=resStartRow,column=2,value=str(food_results[label_dict[p]]["foodaccuracy_top1"]))
     ws.cell(row=resStartRow,column=3,value=str(food_results[label_dict[p]]["foodaccuracy_top5"]))
     ws.cell(row=resStartRow,column=4,value=str(food_results[label_dict[p]]["foodaccuracy_top25"]))
+    ws.cell(row=resStartRow,column=5,value=str(food_results[label_dict[p]]["total"]))
 ws.cell(row=resStartRow+1,column=1,value="Total accuracy")
 ws.cell(row=resStartRow+1,column=2,value=str(total_top1/total_pic))
 ws.cell(row=resStartRow+1,column=3,value=str(total_top5/total_pic))
