@@ -67,28 +67,12 @@ for file in dir:
      for k in range(0,len(filelist)):
          temppath=filelist[k]
          if os.path.isfile(temppath):
-             shutil.copy(temppath,newsubpath+'/'+str(namenum)+temppath[-4:])  #复制至新路径
-             namenum+=1   
+             if temppath[-4]=='.':
+                 shutil.copy(temppath,newsubpath+'/'+str(namenum)+temppath[-4:])  #复制至新路径
+                 namenum+=1  
+             elif temppath[-5]=='.':
+                 shutil.copy(temppath,newsubpath+'/'+str(namenum)+temppath[-5:])  #复制至新路径
+                 namenum+=1 
          
 
          
-         
-
-        
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-          
-         
-     
-
